@@ -13,6 +13,7 @@ import javahw4.Calculator.IAdder;
 import javahw4.Calculator.IFlipper;
 import javahw4.Calculator.ISubtractor;
 
+//BeforeAll 오류 : setUp의 static 또는 class의 TestInstance를 해야하는 이유는?
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class SubtractorTest{
     private ISubtractor subtractor;
