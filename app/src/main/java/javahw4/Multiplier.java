@@ -4,6 +4,8 @@ import javahw4.Calculator.IAdder;
 import javahw4.Calculator.IFlipper;
 import javahw4.Calculator.IMultiplier;
 
+
+//working?
 public class Multiplier implements IMultiplier{
     private IAdder adder;
     private IFlipper flipper;
