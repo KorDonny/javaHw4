@@ -5,7 +5,7 @@ pipeline {
         
         stage('github-clone') {
             steps {
-                git branch: 'BE', credentialsId: 'jenkins', url: '{REPOSITORY URL}'
+                git branch: 'BE', credentialsId: 'jenkins', url: '{https://github.com/KorDonny/javaHw4.git'
             }
         }
         
