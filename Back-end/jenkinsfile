@@ -1,14 +1,28 @@
 pipeline {
     agent any
-    
     stages {
-        
-        stage('github-clone') {
+        stage('Checkout') {
             steps {
-                git branch: 'BE', credentialsId: 'jenkins', url: '{https://github.com/KorDonny/javaHw4.git'
+                git 'https://github.com/KorDonny/javaHw4.git'  // Git 저장소에서 코드 체크아웃
             }
         }
-        
-   		// stage...
-   	}
+        stage('Build') {
+            steps {
+                echo 'Building...'
+                sh './gradlew build'  // Gradle 빌드 명령어 실행
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Testing...'
+                sh './gradlew test'  // Gradle 테스트 명령어 실행
+            }
+        }
+        // stage('Deploy') {
+        //     steps {
+        //         echo 'Deploying...'
+        //         sh 'scp build/libs/myapp.jar user@server:/path/to/deploy'  // SCP를 통해 파일 배포
+        //     }
+        // }
+    }
 }
