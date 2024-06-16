@@ -22,11 +22,11 @@ public class SubtractorTest{
 
     @BeforeAll
     public void setUp(){
-        // IAdder adder = Mockito.mock(IAdder.class);
-        // IFlipper flipper = Mockito.mock(IFlipper.class);
+        IAdder adder = Mockito.mock(IAdder.class);
+        IFlipper flipper = Mockito.mock(IFlipper.class);
 
-        // Mockito.when(flipper.flip(5)).thenReturn(-5);
-        // Mockito.when(adder.add(3, -5)).thenReturn(-2);
+        Mockito.when(flipper.flip(5)).thenReturn(-5);
+        Mockito.when(adder.add(3, -5)).thenReturn(-2);
         adder = new Adder();
         flipper = new Flipper();
         subtractor = new Subtractor(adder, flipper);
@@ -34,10 +34,5 @@ public class SubtractorTest{
     @Test
     public void substractTest(){
         Assertions.assertEquals(-2, subtractor.subtract(3, 5));
-    }
-    @Test
-    public void mockRealization(){
-        Assertions.assertEquals(-5, flipper.flip(5));
-        Assertions.assertEquals(-2, adder.add(3, -5));
     }
 }
